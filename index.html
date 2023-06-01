@@ -1,0 +1,255 @@
+<html lang="en-US"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/style.css">
+
+<!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Demo for spontaneousTTS</title>
+<meta name="generator" content="Jekyll v3.9.0">
+<meta property="og:title" content="Abstract">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="submitted to INTERSPEECH 2023.">
+<meta property="og:description" content="submitted to INTERSPEECH 2023.">
+<link rel="canonical" href="https://anonymousdemo002.github.io/spontaneousTTS/">
+<meta property="og:url" content="https://anonymousdemo002.github.io/spontaneousTTS/">
+<meta property="og:site_name" content="Towards Spontaneous Style Modeling with Semi-supervised Pre-training for Conversational Text-to-Speech Synthesis">
+<meta name="twitter:card" content="summary">
+<meta property="twitter:title" content="Abstract">
+<script type="application/ld+json">
+{"description":"submitted to INTERSPEECH 2023.","url":"https://anonymousdemo002.github.io/spontaneousTTS/","@type":"WebSite","headline":"Abstract","name":"Towards Spontaneous Style Modeling with Semi-supervised Pre-training for Conversational Text-to-Speech Synthesis","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <div>
+              <div style="width: 70%;">
+                <h1 id="project_title">Towards Spontaneous Style Modeling with Semi-supervised Pre-training for Conversational Text-to-Speech Synthesis</h1>
+                <h2 id="project_tagline">submitted to INTERSPEECH 2023.</h2>
+              </div>
+          </div>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1 id="abstract">Abstract</h1>
+
+<p>The spontaneous behavior that often occurs in conversations makes speech more human-like compared to reading-style. However, synthesizing spontaneous-style speech is challenging due to the lack of high-quality spontaneous datasets and the high cost of labeling spontaneous behavior. In this paper, we propose a semi-supervised pre-training method to increase the amount of spontaneous-style speech and spontaneous behavioral labels. In the process of semi-supervised learning, both text and speech information are considered for detecting spontaneous behaviors labels in speech. Moreover, a linguistic-aware encoder is used to model the relationship between each sentence in the conversation. Experimental results indicate that our proposed method achieves superior expressive speech synthesis performance with the ability to model spontaneous behavior in spontaneous-style speech and predict reasonable spontaneous behavior from text.</p>
+
+<h1 id="subjective-evaluation">Subjective Evaluation</h1>
+<p>
+    To demonstrate that our proposed model can significantly achieves superior expressive speech synthesis performance with the ability to model spontaneous behavior in spontaneous-style speech and predict reasonable spontaneous behavior from text, some samples are provided for comparison. 
+    <strong>GT</strong>
+     means ground truth. 
+    <strong>FastSpeech 2</strong>
+     means an open-source implementation of FastSpeech 2. 
+    <strong>UCS*</strong>
+     means a unified controllable spontaneous conversational speech synthesis (UCS) model with some modified according to paper. In addition, a well-trained HIFI-GAN is used as the vocoder to generate waveform.
+</p>
+<p>
+    In the mos test, provide the real speech of the previous or next sentence of the current sentence as 
+    <strong>REF</strong>
+     to serve as a reference for conversational contexts.
+</p>
+<p>
+    Each experiment was divided into two groups. 
+    <strong>w label</strong>
+     group provided spontaneous behavior labels during the inferencing phase, and the evaluation metrics were the naturalness of spontaneous behavior in the synthesized speech and the overall naturalness of spontaneous style. 
+    <strong>wo label</strong>
+     group uses spontaneous behavior labels automatically predicted by the model in the inferencing process, and the evaluation metrics focus more on the rationality of spontaneous behavior in the synthesized speech. 
+    In the text, <strong>1</strong> means filled pause, <strong>2</strong> means prolongation, <strong>3</strong> means both happen.
+</p>
+          
+
+<h3 id="mos1">MOS1  (w label)</h3>
+          
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Target Chinese Text</th>
+      <th style="text-align: left">REF</th>
+      <th style="text-align: left">FastSpeech 2</th>
+      <th style="text-align: left">UCS*</th>
+      <th style="text-align: left">Proposed</th>
+      <th style="text-align: left">GT</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td style="text-align: left"><strong>唉(1)</strong>那<strong>个(3)</strong>……<strong>你(2)</strong>……你有听过北京国际雕塑公园吗？（听过呀，那个是是一个雕塑文化艺术园区。）</td>
+      <td style="text-align: left"><audio controls=""><source src="./wavs/mos1/pre/A0456000001.wav" type="audio/wav">Your browser does not support the audio element.</audio></td>
+      <td style="text-align: left"><audio controls=""><source src="./wavs/mos1/fs2/U0456000001_v26_150000.wav" type="audio/wav">Your browser does not support the audio element.</audio></td>
+      <td style="text-align: left"><audio controls=""><source src="./wavs/mos1/bs/U0456000001_v19_150000.wav" type="audio/wav">Your browser does not support the audio element.</audio></td>
+      <td style="text-align: left"><audio controls=""><source src="./wavs/mos1/pro/U0456000001_v24_150000.wav" type="audio/wav">Your browser does not support the audio element.</audio></td>
+      <td style="text-align: left"><audio controls=""><source src="./wavs/mos1/gt/U0456000001.wav" type="audio/wav">Your browser does not support the audio element.</audio></td>
+    </tr>
+    <tr>
+        <td style="text-align: left">（有的有的，是……零幺零六二八八幺幺四四，这个景点可以玩儿多久啊？）<strong>嗯(3)</strong>可以<strong>玩(3)</strong>……一个、一个小时差不多吧。</td>
+      <td style="text-align: left"><audio controls=""><source src="./wavs/mos1/pre/U0451000002.wav" type="audio/wav">Your browser does not support the audio element.</audio></td>
+      <td style="text-align: left"><audio controls=""><source src="./wavs/mos1/fs2/A0451000002_v26_150000.wav" type="audio/wav">Your browser does not support the audio element.</audio></td>
+      <td style="text-align: left"><audio controls=""><source src="./wavs/mos1/bs/A0451000002_v19_150000.wav" type="audio/wav">Your browser does not support the audio element.</audio></td>
+      <td style="text-align: left"><audio controls=""><source src="./wavs/mos1/pro/A0451000002_v24_150000.wav" type="audio/wav">Your browser does not support the audio element.</audio></td>
+      <td style="text-align: left"><audio controls=""><source src="./wavs/mos1/gt/A0451000002.wav" type="audio/wav">Your browser does not support the audio element.</audio></td>
+    </tr>
+    <tr>
+        <td style="text-align: left">（嗯这个这个有的，电话是零幺零六四三三八八八七。对了这个……这个景点能玩儿多长时间啊？）<strong>嗯(3)</strong>两小时左右吧我觉得，<strong>嗯(1)</strong>你看可以吗？</td>
+      <td style="text-align: left"><audio controls=""><source src="./wavs/mos1/pre/U0458000007.wav" type="audio/wav">Your browser does not support the audio element.</audio></td>
+      <td style="text-align: left"><audio controls=""><source src="./wavs/mos1/fs2/A0458000007_v26_150000.wav" type="audio/wav">Your browser does not support the audio element.</audio></td>
+      <td style="text-align: left"><audio controls=""><source src="./wavs/mos1/bs/A0458000007_v19_150000.wav" type="audio/wav">Your browser does not support the audio element.</audio></td>
+      <td style="text-align: left"><audio controls=""><source src="./wavs/mos1/pro/A0458000007_v24_150000.wav" type="audio/wav">Your browser does not support the audio element.</audio></td>
+      <td style="text-align: left"><audio controls=""><source src="./wavs/mos1/gt/A0458000007.wav" type="audio/wav">Your browser does not support the audio element.</audio></td>
+    </tr>
+    <tr>
+        <td style="text-align: left">（为、为什么啊？哎，算了，你走吧。）<strong>那(3)</strong>……那你把伞拿着吧。</td>
+      <td style="text-align: left"><audio controls=""><source src="./wavs/mos1/pre/U0463000003.wav" type="audio/wav">Your browser does not support the audio element.</audio></td>
+      <td style="text-align: left"><audio controls=""><source src="./wavs/mos1/fs2/A0463000003_v26_150000.wav" type="audio/wav">Your browser does not support the audio element.</audio></td>
+      <td style="text-align: left"><audio controls=""><source src="./wavs/mos1/bs/A0463000003_v19_150000.wav" type="audio/wav">Your browser does not support the audio element.</audio></td>
+      <td style="text-align: left"><audio controls=""><source src="./wavs/mos1/pro/A0463000003_v24_150000.wav" type="audio/wav">Your browser does not support the audio element.</audio></td>
+      <td style="text-align: left"><audio controls=""><source src="./wavs/mos1/gt/A0463000003.wav" type="audio/wav">Your browser does not support the audio element.</audio></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="mos2">MOS2  (wo label)</h3>
+          
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Target Chinese Text</th>
+      <th style="text-align: left">REF</th>
+      <th style="text-align: left">FastSpeech 2</th>
+      <th style="text-align: left">UCS*</th>
+      <th style="text-align: left">Proposed</th>
+      <th style="text-align: left">GT</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <td style="text-align: left">（哦好的，诶对了，那个它的周边……周边还有什么景点吗？）有那个恭王府还有南锣鼓巷。</td>
+      <td style="text-align: left"><audio controls=""><source src="./wavs/mos2/pre/U0459000007.wav" type="audio/wav">Your browser does not support the audio element.</audio></td>
+      <td style="text-align: left"><audio controls=""><source src="./wavs/mos2/fs2/A0459000007_v26_150000.wav" type="audio/wav">Your browser does not support the audio element.</audio></td>
+      <td style="text-align: left"><audio controls=""><source src="./wavs/mos2/bs/A0459000007_v19_wo_l_150000.wav" type="audio/wav">Your browser does not support the audio element.</audio></td>
+      <td style="text-align: left"><audio controls=""><source src="./wavs/mos2/pro/A0459000007_v24_wo_l_150000.wav" type="audio/wav">Your browser does not support the audio element.</audio></td>
+      <td style="text-align: left"><audio controls=""><source src="./wavs/mos2/gt/A0459000007.wav" type="audio/wav">Your browser does not support the audio element.</audio></td>
+    </tr>
+    <tr>
+        <td style="text-align: left">你好，那个你知道……万……万寿山在什么地方吗？（当然了，就在海淀区新建宫门路颐和园里面，嗯你有这边的电话吧。）</td>
+      <td style="text-align: left"><audio controls=""><source src="./wavs/mos2/pre/A0451000001.wav" type="audio/wav">Your browser does not support the audio element.</audio></td>
+      <td style="text-align: left"><audio controls=""><source src="./wavs/mos2/fs2/U0451000001_v26_150000.wav" type="audio/wav">Your browser does not support the audio element.</audio></td>
+      <td style="text-align: left"><audio controls=""><source src="./wavs/mos2/bs/U0451000001_v19_wo_l_150000.wav" type="audio/wav">Your browser does not support the audio element.</audio></td>
+      <td style="text-align: left"><audio controls=""><source src="./wavs/mos2/pro/U0451000001_v24_wo_l_150000.wav" type="audio/wav">Your browser does not support the audio element.</audio></td>
+      <td style="text-align: left"><audio controls=""><source src="./wavs/mos2/gt/U0451000001.wav" type="audio/wav">Your browser does not support the audio element.</audio></td>
+    </tr>
+    <tr>
+        <td style="text-align: left">（有啊有啊，要说起来的话你是不是还没有去过清华啊。你要不顺便就一道去了呗，反正你妹妹早晚也要了解的。）嗯我没去过。我……我去过的地方太少了，清华怎么样？有意思吗？</td>
+      <td style="text-align: left"><audio controls=""><source src="./wavs/mos2/pre/A0460000004.wav" type="audio/wav">Your browser does not support the audio element.</audio></td>
+      <td style="text-align: left"><audio controls=""><source src="./wavs/mos2/fs2/U0460000005_v26_150000.wav" type="audio/wav">Your browser does not support the audio element.</audio></td>
+      <td style="text-align: left"><audio controls=""><source src="./wavs/mos2/bs/U0460000005_v19_wo_l_150000.wav" type="audio/wav">Your browser does not support the audio element.</audio></td>
+      <td style="text-align: left"><audio controls=""><source src="./wavs/mos2/pro/U0460000005_v24_wo_l_150000.wav" type="audio/wav">Your browser does not support the audio element.</audio></td>
+      <td style="text-align: left"><audio controls=""><source src="./wavs/mos2/gt/U0460000005.wav" type="audio/wav">Your browser does not support the audio element.</audio></td>
+    </tr>
+    <tr>
+        <td style="text-align: left">（是啊，嗯我今天早上刚刚才回来。）哦听起来不错。嗯你去那儿都干了什么啊？</td>
+      <td style="text-align: left"><audio controls=""><source src="./wavs/mos2/pre/A0473000001.wav" type="audio/wav">Your browser does not support the audio element.</audio></td>
+      <td style="text-align: left"><audio controls=""><source src="./wavs/mos2/fs2/U0473000002_v26_150000.wav" type="audio/wav">Your browser does not support the audio element.</audio></td>
+      <td style="text-align: left"><audio controls=""><source src="./wavs/mos2/bs/U0473000002_v19_wo_l_150000.wav" type="audio/wav">Your browser does not support the audio element.</audio></td>
+      <td style="text-align: left"><audio controls=""><source src="./wavs/mos2/pro/U0473000002_v24_wo_l_150000.wav" type="audio/wav">Your browser does not support the audio element.</audio></td>
+      <td style="text-align: left"><audio controls=""><source src="./wavs/mos2/gt/U0473000002.wav" type="audio/wav">Your browser does not support the audio element.</audio></td>
+    </tr>
+  </tbody>
+</table>
+          
+<hr>
+
+<h1 id="ablation-study">Ablation Study</h1>
+<h3 id="investigation on linguistics-aware encoder">investigation on linguistics-aware encoder  (w label)</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Target Chinese Text</th>
+      <th style="text-align: left">Proposed</th>
+      <th style="text-align: left">without linguistics-aware encoder</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><strong>你(1)</strong>、你说什么？</td>
+      <td style="text-align: left"><audio controls=""><source src="./wavs/cmos1/A0467000006_v24_150000.wav" type="audio/wav">Your browser does not support the audio element.</audio></td>
+      <td style="text-align: left"><audio controls=""><source src="./wavs/cmos1/A0467000006_v22_150000.wav" type="audio/wav">Your browser does not support the audio element.</audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>那(2)</strong>它的地址呢？地址是在哪儿？</td>
+      <td style="text-align: left"><audio controls=""><source src="./wavs/cmos1/U0459000006_v24_150000.wav" type="audio/wav">Your browser does not support the audio element.</audio></td>
+      <td style="text-align: left"><audio controls=""><source src="./wavs/cmos1/U0459000006_v22_150000.wav" type="audio/wav">Your browser does not support the audio element.</audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">谢谢。<strong>嗯(3)</strong>……我的车好多啦，这个是新的。</td>
+      <td style="text-align: left"><audio controls=""><source src="./wavs/cmos1/U0472000001_v24_150000.wav" type="audio/wav">Your browser does not support the audio element.</audio></td>
+      <td style="text-align: left"><audio controls=""><source src="./wavs/cmos1/U0472000001_v22_150000.wav" type="audio/wav">Your browser does not support the audio element.</audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><strong>哦(3)</strong>你学英语多久了？</td>
+      <td style="text-align: left"><audio controls=""><source src="./wavs/cmos1/U0474000004_v24_150000.wav" type="audio/wav">Your browser does not support the audio element.</audio></td>
+      <td style="text-align: left"><audio controls=""><source src="./wavs/cmos1/U0474000004_v22_150000.wav" type="audio/wav">Your browser does not support the audio element.</audio></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="investigation-on-semi-supervised pre-training method">Investigation on semi-supervised pre-training method  (wo label)</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Target Chinese Text</th>
+      <th style="text-align: left">Proposed</th>
+      <th style="text-align: left">without semi-supervised pre-training method</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">嗯对，那那你先打一下试一下吧。</td>
+      <td style="text-align: left"><audio controls=""><source src="./wavs/cmos2/A0454000010_v24_wo_l_150000.wav" type="audio/wav">Your browser does not support the audio element.</audio></td>
+      <td style="text-align: left"><audio controls=""><source src="./wavs/cmos2/A0454000010_v18_wo_l_150000.wav" type="audio/wav">Your browser does not support the audio element.</audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">可是现在不是不是还挺早的吗？</td>
+      <td style="text-align: left"><audio controls=""><source src="./wavs/cmos2/A0466000004_v24_wo_l_150000.wav" type="audio/wav">Your browser does not support the audio element.</audio></td>
+      <td style="text-align: left"><audio controls=""><source src="./wavs/cmos2/A0466000004_v18_wo_l_150000.wav" type="audio/wav">Your browser does not support the audio element.</audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">唉，算了吧，我我还是想等到天黑再过去。</td>
+      <td style="text-align: left"><audio controls=""><source src="./wavs/cmos2/A0466000005_v24_wo_l_150000.wav" type="audio/wav">Your browser does not support the audio element.</audio></td>
+      <td style="text-align: left"><audio controls=""><source src="./wavs/cmos2/A0466000005_v18_wo_l_150000.wav" type="audio/wav">Your browser does not support the audio element.</audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">哦……那……那她边上好像还有很多其他景点吧？</td>
+      <td style="text-align: left"><audio controls=""><source src="./wavs/cmos2/U0457000007_v24_wo_l_150000.wav" type="audio/wav">Your browser does not support the audio element.</audio></td>
+      <td style="text-align: left"><audio controls=""><source src="./wavs/cmos2/U0457000007_v18_wo_l_150000.wav" type="audio/wav">Your browser does not support the audio element.</audio></td>
+    </tr>
+  </tbody>
+</table>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        
+        <p class="copyright">Towards Spontaneous Style Modeling with Semi-supervised Pre-training for Conversational Text-to-Speech Synthesis maintained by <a href="https://github.com/anonymousdemo002">spontaneousTTS</a></p>
+        
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+  
+
+</body></html>
